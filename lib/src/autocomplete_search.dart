@@ -32,8 +32,7 @@ class AutoCompleteSearch extends StatefulWidget {
       this.initialSearchString,
       this.searchForInitialValue,
       this.autocompleteOnTrailingWhitespace})
-      : assert(searchBarController != null),
-        super(key: key);
+      : super(key: key);
 
   final String? sessionToken;
   final String? hintText;
@@ -70,7 +69,7 @@ class AutoCompleteSearchState extends State<AutoCompleteSearch> {
   void initState() {
     super.initState();
     if (widget.initialSearchString != null) {
-      WidgetsBinding.instance!.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         controller.text = widget.initialSearchString!;
         if (widget.searchForInitialValue!) {
           _onSearchInputChange();
@@ -201,6 +200,7 @@ class AutoCompleteSearchState extends State<AutoCompleteSearch> {
   _searchPlace(String searchTerm) {
     this.provider.prevSearchTerm = searchTerm;
 
+    // ignore: unnecessary_null_comparison
     if (context == null) return;
 
     _clearOverlay();
