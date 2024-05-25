@@ -369,7 +369,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
           SizedBox(height: 10),
           ElevatedButton(
               style: ButtonStyle(
-                padding: MaterialStateProperty.all(
+                padding: WidgetStateProperty.all(
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10)),
               ),
               onPressed: () {
